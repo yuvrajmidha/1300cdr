@@ -1,41 +1,28 @@
-import React from 'react';
+import React, { useState } from 'react';
 import {
   ChakraProvider,
-  Box,
-  Text,
-  Link,
-  VStack,
-  Code,
-  Grid,
-  theme,
 } from '@chakra-ui/react';
-import { ColorModeSwitcher } from './ColorModeSwitcher';
-import { Logo } from './Logo';
+import theme from './theme'
+import { HashRouter as Router } from 'react-router-dom';
+import Views from './views';
+import { Route, Switch } from 'react-router-dom';
+import './assets/scss/_global.scss'
+import { DndProvider } from 'react-dnd';
+import { HTML5Backend } from 'react-dnd-html5-backend'
 
 function App() {
+
+
   return (
-    <ChakraProvider theme={theme}>
-      <Box textAlign="center" fontSize="xl">
-        <Grid minH="100vh" p={3}>
-          <ColorModeSwitcher justifySelf="flex-end" />
-          <VStack spacing={8}>
-            <Logo h="40vmin" pointerEvents="none" />
-            <Text>
-              Edit <Code fontSize="xl">src/App.js</Code> and save to reload.
-            </Text>
-            <Link
-              color="teal.500"
-              href="https://chakra-ui.com"
-              fontSize="2xl"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Learn Chakra
-            </Link>
-          </VStack>
-        </Grid>
-      </Box>
-    </ChakraProvider>
+      <ChakraProvider theme={theme}>
+        <DndProvider backend={HTML5Backend}>
+          <Router>
+            <Switch>
+              <Route path="/" component={Views}/>
+            </Switch>
+          </Router>
+        </DndProvider>
+      </ChakraProvider>
   );
 }
 
