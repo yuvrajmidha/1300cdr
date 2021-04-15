@@ -2,7 +2,7 @@ import { Button, ButtonGroup } from '@chakra-ui/button'
 import { Input, InputGroup, InputLeftElement } from '@chakra-ui/input'
 import { Box, Flex, HStack, Text} from '@chakra-ui/layout'
 import { Menu, MenuButton, MenuItem, MenuList } from '@chakra-ui/menu'
-import { AgGridColumn } from 'ag-grid-react/lib/agGridColumn'
+import { AgGridColumn } from '../../ag-grid-react'
 import orderData from '../../assets/data/orders.json'
 import TableDate from '../../components/table-components/date';
 import TableObjectRenderer from '../../components/table-components/object';

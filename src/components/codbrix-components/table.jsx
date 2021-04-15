@@ -1,5 +1,5 @@
 import React, { forwardRef, useImperativeHandle, useState } from 'react';
-import { AgGridReact} from 'ag-grid-react';
+import { AgGridReact} from '../../ag-grid-react';
 import 'ag-grid-enterprise';
 import { Box} from '@chakra-ui/layout';
 import { useColorModeValue } from '@chakra-ui/color-mode';
