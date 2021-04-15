@@ -8,11 +8,11 @@ import { useColorModeValue } from '@chakra-ui/color-mode';
 const AgTable = forwardRef((props, ref) => {
 
   const [gridApi, setGridApi] = useState(null);
-  const [gridColumnApi, setGridColumnApi] = useState(null);
+  // const [gridColumnApi, setGridColumnApi] = useState(null);
 
   const onGridReady = (params) => {
     setGridApi(params.api);
-    setGridColumnApi(params.columnApi);
+    // setGridColumnApi(params.columnApi);
   };
 
   useImperativeHandle(ref, () => ({

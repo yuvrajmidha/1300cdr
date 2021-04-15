@@ -48,6 +48,10 @@ function AppLayout() {
     const width = useWindowWidth()
     const { colorMode, toggleColorMode } = useColorMode()
 
+    useEffect(() => {
+        console.log(colorMode);
+    }, [colorMode])
+
     return (
         <>
         {width < 992 && <MobileMenu />}
