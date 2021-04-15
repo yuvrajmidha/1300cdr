@@ -33,7 +33,7 @@ function useWindowWidth() {
     return size;
   }
 
-function AppLayout({history}) {
+function AppLayout() {
 
     const [title, setTitle] = useState("Orders")
 
