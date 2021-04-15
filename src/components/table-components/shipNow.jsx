@@ -19,13 +19,11 @@ import {
     Table,
     Thead,
     Tbody,
-    Tfoot,
     Tr,
     Th,
     Td,
-    TableCaption,
   } from "@chakra-ui/react"
-import { FaArchive, FaArrowRight, FaListAlt, FaShippingFast } from 'react-icons/fa'
+import { FaArchive, FaArrowRight, FaShippingFast } from 'react-icons/fa'
 
 function ShipNow() {
 

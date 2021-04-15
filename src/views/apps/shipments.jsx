@@ -4,15 +4,12 @@ import { Box, Flex, HStack } from '@chakra-ui/layout'
 import { Menu, MenuButton, MenuItem, MenuList } from '@chakra-ui/menu'
 import { AgGridColumn } from 'ag-grid-react/lib/agGridColumn'
 import shippingData from '../../assets/data/shipments.json'
-import TableDate from '../../components/table-components/date';
 import TableObjectRenderer from '../../components/table-components/object';
-import ShipNow from '../../components/table-components/shipNow'
 import React, { useState } from 'react'
 import { FaCalendar, FaChevronDown, FaSearch } from 'react-icons/fa'
 
 import AgTable from '../../components/codbrix-components/table'
 import OrderTrack from '../../components/table-components/orderTrack'
-import { Checkbox } from '@chakra-ui/checkbox'
 
 const categories = ["All", "Shipped","Picked Up", "On The Way", "Delivered", "RTO In-Transit", "RTO Delivered", "Others"]
 

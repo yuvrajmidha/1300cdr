@@ -1,8 +1,8 @@
 import { Button } from '@chakra-ui/button'
 import { Input } from '@chakra-ui/input'
-import { Tabs, TabList, TabPanels, Tab, TabPanel, Switch, NumberInput, NumberInputField, Alert, AlertIcon } from "@chakra-ui/react"
+import { Tabs, TabList, TabPanels, Tab, TabPanel } from "@chakra-ui/react"
 import { Box, Divider, Flex, Heading, Link, Stack, Text } from '@chakra-ui/layout'
-import React, { useState } from 'react'
+import React from 'react'
 import Container from '../../components/ui-components/container'
 import SettingsPanel from '../../components/ui-components/settingsPanel'
 

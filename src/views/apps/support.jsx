@@ -1,4 +1,4 @@
-import { Box, Center, Flex, Heading, Text } from '@chakra-ui/layout'
+import { Box, Flex, Heading, Text } from '@chakra-ui/layout'
 import React, { useState } from 'react'
 import Container from '../../components/ui-components/container'
 import ReactQuill from 'react-quill';

@@ -3,8 +3,6 @@ import {
     Modal,
     ModalOverlay,
     ModalContent,
-    ModalHeader,
-    ModalFooter,
     ModalBody,
     ModalCloseButton,
     useDisclosure,
@@ -16,7 +14,6 @@ import {
     Divider,
   } from "@chakra-ui/react"
 import { FaLocationArrow, FaWeight } from 'react-icons/fa';
-import { formatDate } from '../../scripts/utils';
 
 const shipment_track_activities = [
     {
@@ -37,7 +34,7 @@ const shipment_track_activities = [
 ]
 
 function OrderTrack(props) {
-    const cellValue = props.valueFormatted ? props.valueFormatted : props.value;
+    // const cellValue = props.valueFormatted ? props.valueFormatted : props.value;
     const { isOpen, onOpen, onClose } = useDisclosure()
     return (
       <>

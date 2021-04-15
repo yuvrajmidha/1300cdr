@@ -1,5 +1,5 @@
 import { Button, ButtonGroup } from '@chakra-ui/button'
-import { Box, Flex, HStack } from '@chakra-ui/layout'
+import { Box, Flex } from '@chakra-ui/layout'
 import { AgGridColumn } from 'ag-grid-react/lib/agGridColumn'
 import remittanceData from '../../assets/data/remittance.json'
 import walletData from '../../assets/data/walletlogs.json'

@@ -1,4 +1,4 @@
-import React, { lazy, Suspense } from "react";
+import React, { Suspense } from "react";
 import { Switch, Route, Redirect } from "react-router-dom";
 import Billing from "./billing";
 import Dashboard from "./dashboard";

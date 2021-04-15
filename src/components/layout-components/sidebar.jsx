@@ -1,7 +1,6 @@
 import { Button } from '@chakra-ui/button'
 import { Box, Flex, VStack } from '@chakra-ui/layout'
 import React from 'react'
-import {RiUserFill} from 'react-icons/ri'
 import {MdSettings} from 'react-icons/md'
 import { FaBox, FaQuestion} from 'react-icons/fa'
 import Logo from '../../assets/images/logo_white.svg'

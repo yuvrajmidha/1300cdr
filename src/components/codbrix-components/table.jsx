@@ -1,5 +1,3 @@
-'use strict';
-
 import React, { forwardRef, useImperativeHandle, useState } from 'react';
 import { AgGridReact} from 'ag-grid-react';
 import 'ag-grid-enterprise';
@@ -10,7 +8,7 @@ import { useColorModeValue } from '@chakra-ui/color-mode';
 const AgTable = forwardRef((props, ref) => {
 
   const [gridApi, setGridApi] = useState(null);
-  const [gridColumnApi, setGridColumnApi] = useState(null);
+  const [, setGridColumnApi] = useState(null);
 
   const onGridReady = (params) => {
     setGridApi(params.api);

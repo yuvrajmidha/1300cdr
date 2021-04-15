@@ -1,5 +1,5 @@
 import React from 'react'
-import { Box, Divider, Flex, Heading, Stack, Text } from '@chakra-ui/layout'
+import { Box, Divider,Heading, Stack, Text } from '@chakra-ui/layout'
 import { useColorModeValue } from '@chakra-ui/color-mode'
 
 function SettingsPanel({title, description, children, footer}) {

@@ -1,13 +1,12 @@
-import { Badge, Box, Divider, Flex, Heading, HStack, Text, VStack } from '@chakra-ui/layout'
-import React, { useContext, useState } from 'react'
+import { Badge, Box, Flex, Heading, Text, VStack } from '@chakra-ui/layout'
+import React from 'react'
 import products from '../../assets/data/products.json'
 import Container from '../../components/ui-components/container'
-import { FaCartPlus, FaTrash, FaTrashAlt } from 'react-icons/fa'
+import { FaCartPlus, FaTrash } from 'react-icons/fa'
 import { useColorModeValue } from '@chakra-ui/color-mode'
 import {
     Drawer,
     DrawerBody,
-    DrawerFooter,
     DrawerHeader,
     DrawerOverlay,
     DrawerContent,
@@ -26,7 +25,6 @@ import {
     NumberInputStepper,
   } from "@chakra-ui/react"
 import { Button, ButtonGroup } from '@chakra-ui/button'
-import { Select } from '@chakra-ui/select'
 import { useHistory } from 'react-router'
 
 function Inventory() {
@@ -34,8 +32,8 @@ function Inventory() {
     const history = useHistory()
     const color = useColorModeValue("#fff","#000")
 
-    const [cartBuy, setCartBuy] = useState([])
-    const [cartSell, setCartSell] = useState([])
+    // const [cartBuy, setCartBuy] = useState([])
+    // const [cartSell, setCartSell] = useState([])
 
     const { isOpen, onOpen, onClose } = useDisclosure()
     const btnRef = React.useRef()

@@ -5,7 +5,6 @@ import {
     ModalOverlay,
     ModalContent,
     ModalHeader,
-    ModalFooter,
     ModalBody,
     ModalCloseButton,
     useDisclosure,
@@ -22,9 +21,9 @@ import {
 function TableObjectRenderer(props) {
 
     const { isOpen, onOpen, onClose } = useDisclosure()
+    var finalObject = []
 
     if(props.display === "accordion"){
-        var finalObject = []
         props.value.forEach(element => {
             var obj = []
             props.fields.forEach(item => {
@@ -35,10 +34,8 @@ function TableObjectRenderer(props) {
         console.log(finalObject);
     }
     else if(props.display === "table"){
-        var finalObject = []
     }
     else {
-        var finalObject = []
         props.fields.forEach(item => {
             finalObject.push([item, props.value[item]])
         })

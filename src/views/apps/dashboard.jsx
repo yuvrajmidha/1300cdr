@@ -5,7 +5,7 @@ import {
     StatLabel,
     StatNumber,
   } from "@chakra-ui/react"
-import { Box, Center, Flex, Heading, Stack, Text } from '@chakra-ui/layout'
+import { Box, Flex, Heading, Text } from '@chakra-ui/layout'
 import React from 'react'
 import Container from '../../components/ui-components/container'
 import { PieChart } from 'react-minimal-pie-chart';
@@ -27,7 +27,6 @@ function Dashboard() {
                             radius={PieChart.defaultProps.radius - 6}
                             lineWidth={60}
                             segmentsStyle={{ transition: 'stroke .3s', cursor: 'pointer' }}
-                            segmentsShift={(index) => (index === 0 ? 8: 1)}
                             animate
                             data={[
                                 { title: 'One', value: 10, color: '#ECC94B' },

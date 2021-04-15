@@ -1,12 +1,9 @@
-import { Badge, Box, Divider, Flex, Heading, HStack, Text, VStack } from '@chakra-ui/layout'
+import { Badge, Box, Flex, Heading, HStack} from '@chakra-ui/layout'
 import React from 'react'
 import products from '../../assets/data/products.json'
 import Container from '../../components/ui-components/container'
-import { FaCartPlus } from 'react-icons/fa'
 import { useColorModeValue } from '@chakra-ui/color-mode'
 import { Image } from '@chakra-ui/image'
-import { Button, ButtonGroup } from '@chakra-ui/button'
-import { Select } from '@chakra-ui/select'
 
 function DropstocksInventory() {
 

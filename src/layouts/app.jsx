@@ -1,22 +1,16 @@
-import { Box, Center, Flex, Text } from '@chakra-ui/layout'
+import { Box, Center, Flex } from '@chakra-ui/layout'
 import React, { useEffect, useLayoutEffect, useState } from 'react'
 import { Route, Switch, useLocation, withRouter } from 'react-router'
 import {
     Stat,
     StatLabel,
     StatNumber,
-    StatHelpText,
-    StatArrow,
-    StatGroup,
-    Image,
     Menu,
-    Switch as ChakraSwitch,
     MenuButton,
     MenuList,
     MenuGroup,
     MenuItem,
     MenuDivider,
-    Button,
     useColorMode,
   } from "@chakra-ui/react"
 import MobileMenu from '../components/layout-components/mobileMenu'
@@ -52,7 +46,7 @@ function AppLayout({history}) {
     }, [location])
 
     const width = useWindowWidth()
-    const { colorMode, toggleColorMode } = useColorMode()
+    const [, toggleColorMode ] = useColorMode()
 
     return (
         <>
