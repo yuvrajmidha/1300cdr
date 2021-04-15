@@ -46,7 +46,7 @@ function AppLayout({history}) {
     }, [location])
 
     const width = useWindowWidth()
-    const [, toggleColorMode ] = useColorMode()
+    const { colorMode, toggleColorMode } = useColorMode()
 
     return (
         <>
