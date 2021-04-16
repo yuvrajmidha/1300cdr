@@ -1,4 +1,4 @@
-export const formatDate = (date, splitter) => {
+export const formatDate = (date, splitter = "T") => {
     date = date.split(splitter)[0].split('-')
     const months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]
 

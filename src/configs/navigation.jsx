@@ -4,7 +4,7 @@ import { RiHome6Fill } from "react-icons/ri";
 const NavigationConfig = [
     {   
         key: "dashboard",
-        title: "Dashboard",
+        title: "Home",
         icon: RiHome6Fill,
         path: '/dashboard'
     },
@@ -22,30 +22,37 @@ const NavigationConfig = [
     },
     {
         key:"billing",
-        title: "Billing / Inventory Logs",
+        title: "Billing",
         icon: FaWpforms,
-        path: '/billing/inventorylogs',
-        hidden: true
-    },
-    {
-        key:"billing",
-        title: "Billing / Wallet Recharges",
-        icon: FaWpforms,
-        path: '/billing/walletrecharges',
-        hidden: true
-    },
-    {
-        key:"billing",
-        title: "Billing / COD Remittance",
-        icon: FaWpforms,
-        path: '/billing/codremittance',
+        path: '/billing/shipping-charges',
         hidden: true
     },
     {
         key:"billing",
         title: "Billing",
         icon: FaWpforms,
-        path: '/billing/codremittance'
+        path: '/billing/invoices',
+        hidden: true
+    },
+    {
+        key:"billing",
+        title: "Billing",
+        icon: FaWpforms,
+        path: '/billing/inventory-logs',
+        hidden: true
+    },
+    {
+        key:"billing",
+        title: "Billing",
+        icon: FaWpforms,
+        path: '/billing/wallet-logs',
+        hidden: true
+    },
+    {
+        key:"billing",
+        title: "Billing",
+        icon: FaWpforms,
+        path: '/billing/cod-remittance'
     },
     {
         key:"products",

@@ -10,6 +10,8 @@
                 "quantity": 2
             }
         ],
+        "total_quantity": 2,
+        "type": "Sell Back",
         "amount": 980
     },
     {
@@ -23,7 +25,9 @@
                 "quantity": 2
             }
         ],
-        "amount": 980
+        "amount": 980,
+        "total_quantity": 2,
+        "type": "Sell Back"
     },
     {
         "date": "Fri, Oct 23, 2020",
@@ -36,6 +40,8 @@
                 "quantity": 2
             }
         ],
+        "total_quantity": 2,
+        "type": "Sell Back",
         "amount": 980
     }
 ]

@@ -3,24 +3,32 @@
         "date": "Fri, Oct 23, 2020",
         "txn_id": 4587621,
         "amount": 500,
-        "description": "Recharged for new product."
+        "balance": 3500,
+        "type": "Recharge",
+        "remarks": "-" 
     },
     {
         "date": "Fri, Oct 23, 2020",
         "txn_id": 4587621,
-        "amount": 500,
-        "description": "Recharged for new product."
+        "amount": -12,
+        "balance": 3000,
+        "type": "RTO Charges",
+        "remarks": "Order ID: SN-2017" 
     },
     {
         "date": "Fri, Oct 23, 2020",
         "txn_id": 4587621,
-        "amount": 500,
-        "description": "Recharged for new product."
+        "amount": -16,
+        "balance": 3012,
+        "type": "RTO Charges",
+        "remarks": "Order ID: SN-11017" 
     },
     {
         "date": "Fri, Oct 23, 2020",
         "txn_id": 4587621,
-        "amount": 500,
-        "description": "Recharged for new product."
+        "amount": -72,
+        "balance": 3028,
+        "type": "Shipping Charges",
+        "remarks": "Order ID: SN-2017" 
     }
 ]

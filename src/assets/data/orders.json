@@ -2058,6 +2058,63 @@
                     "tax_lines": [],
                     "duties": [],
                     "discount_allocations": []
+                },
+                {
+                    "id": 9729069744302,
+                    "admin_graphql_api_id": "gid:\/\/shopify\/LineItem\/9729069744302",
+                    "fulfillable_quantity": 0,
+                    "fulfillment_service": "manual",
+                    "fulfillment_status": "fulfilled",
+                    "gift_card": false,
+                    "grams": 450,
+                    "name": "AroMist™ Ultrasonic Diffuser - Light Wood",
+                    "origin_location": {
+                        "id": 2839854874798,
+                        "country_code": "IN",
+                        "province_code": "RJ",
+                        "name": "sponiq1",
+                        "address1": "18 b",
+                        "address2": "",
+                        "city": "Ganganagar",
+                        "zip": "335001"
+                    },
+                    "price": "899.00",
+                    "price_set": {
+                        "shop_money": {
+                            "amount": "899.00",
+                            "currency_code": "INR"
+                        },
+                        "presentment_money": {
+                            "amount": "899.00",
+                            "currency_code": "INR"
+                        }
+                    },
+                    "product_exists": true,
+                    "product_id": 6097730175150,
+                    "properties": [],
+                    "quantity": 1,
+                    "requires_shipping": true,
+                    "sku": "ADCLW",
+                    "taxable": false,
+                    "title": "AroMist™ Ultrasonic Diffuser",
+                    "total_discount": "0.00",
+                    "total_discount_set": {
+                        "shop_money": {
+                            "amount": "0.00",
+                            "currency_code": "INR"
+                        },
+                        "presentment_money": {
+                            "amount": "0.00",
+                            "currency_code": "INR"
+                        }
+                    },
+                    "variant_id": 37605853003950,
+                    "variant_inventory_management": "shopify",
+                    "variant_title": "Light Wood",
+                    "vendor": "Aayugenic",
+                    "tax_lines": [],
+                    "duties": [],
+                    "discount_allocations": []
                 }
             ],
             "refunds": [],

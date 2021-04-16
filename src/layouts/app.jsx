@@ -19,19 +19,7 @@ import AppViews from '../views/apps'
 import PageHeader from '../components/layout-components/pageHeader'
 import NavigationConfig from '../configs/navigation'
 import { FaUser } from 'react-icons/fa'
-
-function useWindowWidth() {
-    const [size, setSize] = useState(0);
-    useLayoutEffect(() => {
-      function updateSize() {
-        setSize(window.innerWidth);
-      }
-      window.addEventListener('resize', updateSize);
-      updateSize();
-      return () => window.removeEventListener('resize', updateSize);
-    }, []);
-    return size;
-  }
+import useWindowWidth from '../scripts/width'
 
 function AppLayout() {
 
@@ -54,21 +42,22 @@ function AppLayout() {
 
     return (
         <>
-        {width < 992 && <MobileMenu />}
         <Flex>
             {width > 992 && <Box height="100vh" minWidth="280px" width="280px" pos="fixed">
                     <Sidebar/>
             </Box>}
             <Box pl={["0px","0px","0px","280px"]} width="100%">
                 <PageHeader title={title} extras={<Flex>
-                    <Stat px={8} py={2} borderLeftWidth={1}>
-                        <StatLabel>My Earnings</StatLabel>
-                        <StatNumber>Rs.15,300.00</StatNumber>
-                    </Stat>
-                    <Stat px={8} py={2} borderLeftWidth={1}>
-                        <StatLabel>Shipping Wallet</StatLabel>
-                        <StatNumber>Rs.4,380.00</StatNumber>
-                    </Stat>
+                    {width > 992 && <>
+                        <Stat px={8} py={2} borderLeftWidth={1}>
+                            <StatLabel>My Earnings</StatLabel>
+                            <StatNumber>Rs.15,300.00</StatNumber>
+                        </Stat>
+                        <Stat px={8} py={2} borderLeftWidth={1}>
+                            <StatLabel>Shipping Wallet</StatLabel>
+                            <StatNumber>Rs.4,380.00</StatNumber>
+                        </Stat>
+                    </>}
                     <Menu>
                         <MenuButton borderLeftWidth={1} m={0} p={0} _hover={{background: "#88888811"}}>
                             <Center cursor="pointer" px={4}>
