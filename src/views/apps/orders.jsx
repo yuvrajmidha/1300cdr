@@ -1,20 +1,15 @@
-import { Button, ButtonGroup } from '@chakra-ui/button'
-import { Input, InputGroup, InputLeftElement } from '@chakra-ui/input'
-import { Box, Flex, HStack, Text} from '@chakra-ui/layout'
-import { Menu, MenuButton, MenuItem, MenuList } from '@chakra-ui/menu'
+import { Button } from '@chakra-ui/button'
+import { Box, Flex, Text} from '@chakra-ui/layout'
 import { AgGridColumn } from 'ag-grid-react'
 import orderData from '../../assets/data/orders.json'
 import TableDate from '../../components/table-components/date';
 import TableObjectRenderer from '../../components/table-components/object';
 import ShipNow from '../../components/table-components/shipNow'
-import React, { useState } from 'react'
-import { FaCalendar, FaChevronDown, FaFileExcel, FaSearch } from 'react-icons/fa'
+import React from 'react'
 
 import AgTable from '../../components/codbrix-components/table'
 import { Alert, AlertIcon } from '@chakra-ui/alert'
 import { Link } from 'react-router-dom'
-import { Select } from '@chakra-ui/select'
-import { Checkbox } from '@chakra-ui/checkbox'
 
 function Orders() {
 

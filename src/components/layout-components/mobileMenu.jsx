@@ -1,21 +1,17 @@
 import { Button } from '@chakra-ui/button'
-import { Flex } from '@chakra-ui/layout'
 import {
     Drawer,
-    DrawerBody,
-    DrawerFooter,
-    DrawerHeader,
     DrawerOverlay,
     DrawerContent,
     DrawerCloseButton,
     useDisclosure,
   } from "@chakra-ui/react"
 import React, { useEffect } from 'react'
-import { FaMoon } from 'react-icons/fa'
 import { MdMenu } from 'react-icons/md'
 import { useLocation } from 'react-router'
-import Logo from '../../Logo'
 import Sidebar from './sidebar'
+
+
 
 function MobileMenu() {
 
@@ -24,7 +20,9 @@ function MobileMenu() {
 
     useEffect(() => {
         onClose()
+        // eslint-disable-next-line
     }, [location])
+    
 
     return (
         <>

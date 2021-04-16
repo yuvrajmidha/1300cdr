@@ -1,5 +1,5 @@
 import { Box, Center, Flex } from '@chakra-ui/layout'
-import React, { useEffect, useLayoutEffect, useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { Route, Switch, useLocation, withRouter } from 'react-router'
 import {
     Stat,
@@ -13,7 +13,6 @@ import {
     MenuDivider,
     useColorMode,
   } from "@chakra-ui/react"
-import MobileMenu from '../components/layout-components/mobileMenu'
 import Sidebar from '../components/layout-components/sidebar'
 import AppViews from '../views/apps'
 import PageHeader from '../components/layout-components/pageHeader'
