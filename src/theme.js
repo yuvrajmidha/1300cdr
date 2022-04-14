@@ -8,8 +8,9 @@ const theme = extendTheme({
     white: "#f7fafc",
     brand: {
       100: "#f7fafc",
-      400: "#FD184A88",
-      500: "#FD184A;",
+      400: "#7359ff",
+      500: "#2d2dd8;",
+      600: "#7359ff",
       900: "#030519",
     },
   },

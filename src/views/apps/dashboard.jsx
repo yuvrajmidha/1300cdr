@@ -1,79 +1,84 @@
-import { useColorModeValue } from '@chakra-ui/color-mode'
-import {
-    chakra,
-    Stat,
-    StatLabel,
-    StatNumber,
-  } from "@chakra-ui/react"
-import { Box, Flex, Heading, Text } from '@chakra-ui/layout'
-import React from 'react'
-import Container from '../../components/ui-components/container'
-import { PieChart } from 'react-minimal-pie-chart';
+import { Box} from '@chakra-ui/layout'
+import { AgGridColumn } from 'ag-grid-react'
+import shippingData from '../../assets/data/customers.json'
+import TableObjectRenderer from '../../components/table-components/object';
+import React, { useEffect, useState } from 'react'
+import AgTable from '../../components/codbrix-components/table'
+import { Button, ButtonGroup, Container, useToast, Link } from '@chakra-ui/react';
+import generateInvoice from '../../components/table-components/generateInvoice';
+import {Link as HyperLink} from "react-router-dom";
+import EditDetails from '../../components/table-components/editDetails';
+import { getCustomers } from '../../services/customers';
 
-const MyChart = chakra(PieChart)
 
-function Dashboard() {
+
+function Shipments() {
+
+    const [numbers, setNumbers] = useState([])
+
+    function Actions(props) {
+
+        const toast = useToast();
+    
+        return <>
+        {props.data.name ? 
+            generateInvoice(props)
+       : <EditDetails number={props.data.number} onSuccess={(code, data) => {
+            toast({
+                title: code === 200 ? "Customer Added Successfully!" : "Customer Details Updated!",
+                position: "top",
+                status: "success"
+            })
+            getCust(1)
+        }} type={"create"}><Button width={"100%"} ml="auto">Add Details</Button></EditDetails>}</>
+       
+    }
+
+    function getCust(page){
+        getCustomers(page).then(res => {
+            var customers = [];
+            Object.entries(res).map(cust => {
+                if(cust[0] !== 'Anonymous' && cust[0] !== '' && cust[0] !== 'undefined' && cust[0] !== 'No Answer'){
+                    customers.push({
+                        id: cust[1].id,
+                        total_calls: cust[1].total_calls,
+                        name: cust[1].name,
+                        email: cust[1].email,
+                        number: cust[0],
+                        charges: cust[1].charges,
+                    })
+                }
+            })
+
+            setNumbers(customers);
+        })
+    }
+
+    useEffect(() => {
+        getCust(1)
+    }, [])
+
     return (
-        <Flex alignItems={{base:"flex-start",xl:"center"}} mt={16} minHeight="calc(100vh - 76px)" pb={32}>
-            <Container>
-            <Box px={12} pb={20} width="100%">
-                <Heading>Hi, John 👋 </Heading>
-                <Text mt={2} fontWeight={600} opacity={.7}>We are glad to see you back.</Text>
-            </Box>
-            <Box>
-                <Flex wrap="wrap">
-                    <Flex justifyContent="center" alignItems="center" my={8} p={2} w={{base:"100%", xl:"40%"}}>
-                        <MyChart segmentsShift={2} height="300px"
-                            radius={PieChart.defaultProps.radius - 6}
-                            lineWidth={60}
-                            segmentsStyle={{ transition: 'stroke .3s', cursor: 'pointer' }}
-                            animate
-                            data={[
-                                { title: 'One', value: 10, color: '#ECC94B' },
-                                { title: 'Two', value: 15, color: '#E53E3E' },
-                                { title: 'Three', value: 20, color: '#6B46C1' },
-                            ]}
-                        />
-                    </Flex>
-                    <Flex wrap="wrap" width={{base:"100%", xl:"60%"}} direction={{sm:"column", md:"row"}}>
-                        <Box mb={2} px={2} width={{base:"100%", md:"50%"}}>
-                            <Box borderColor="yellow.500" borderBottomWidth={4} p={8} shadow="lg" bg={useColorModeValue("#fff","#000")} rounded={10}>
-                                <Stat>
-                                    <StatLabel fontWeight="bold">Total Orders</StatLabel>
-                                    <StatNumber fontWeight={800} fontSize="5xl">2,344</StatNumber>
-                                </Stat>
-                            </Box>
-                        </Box>
-                        <Box px={2} mb={2} width={{base:"100%", md:"50%"}}>
-                            <Box borderColor="purple.500" borderBottomWidth={4} p={8} shadow="lg" bg={useColorModeValue("#fff","#000")} rounded={10}>
-                                <Stat>
-                                    <StatLabel fontWeight="bold">Shipped Orders</StatLabel>
-                                    <StatNumber fontWeight={800} fontSize="5xl">524</StatNumber>
-                                </Stat>
-                            </Box>
-                        </Box>
-                        <Box px={2} mt={2} width={{base:"100%", md:"50%"}}>
-                            <Box borderColor="red.500" borderBottomWidth={4} p={8} shadow="lg" bg={useColorModeValue("#fff","#000")} rounded={10}>
-                                <Stat>
-                                    <StatLabel fontWeight="bold">Orders Deliverd</StatLabel>
-                                    <StatNumber fontWeight={800} fontSize="5xl">310</StatNumber>
-                                </Stat>
-                            </Box>
-                        </Box>
-                        <Box px={2} mt={2} width={{base:"100%", md:"50%"}}>
-                            <Box borderColor="green.500" borderBottomWidth={4} p={8} shadow="lg" bg={useColorModeValue("#fff","#000")} rounded={10}>
-                                <Stat>
-                                    <StatLabel fontWeight="bold">Earnings</StatLabel>
-                                    <StatNumber fontWeight={800} fontSize="5xl" >₹112,344</StatNumber>
-                                </Stat>
-                            </Box>
-                        </Box>
-                    </Flex>
-                </Flex>
-            </Box>
-        </Container>
-        </Flex>
+            <Container maxW={"8xl"}>
+                <AgTable 
+                    title="Customers"
+                    rowData={numbers} 
+                    offsetY={76}
+                    minWidth={120}
+                    exportButton = {false}
+                    dateRange={false}
+                    >
+                    <AgGridColumn field="number" cellRendererFramework={(props) => <HyperLink to={'/app/billing/' + props.data.number}><Link as="button" fontWeight={"extrabold"} textTransform="uppercase" color="brand.500">{props.value}</Link></HyperLink>} />
+                    <AgGridColumn field="name" />
+                    <AgGridColumn field="email" />
+                    <AgGridColumn headerName="Mobile Call" valueFormatter={(params) => params.value && `$${params?.value}/min`} field="charges.mobile" />
+                    <AgGridColumn headerName="National Call" valueFormatter={(params) => params.value && `$${params?.value}/min`} field="charges.national" />
+                    <AgGridColumn headerName="International Call" valueFormatter={(params) => params.value && `$${params?.value}/min`} field="charges.international" />
+                    <AgGridColumn headerName="Total Calls" valueFormatter={(params) => params.value > 999 ? `${Math.floor(params.value/1000)}K` : params.value} field="total_calls" />
+                    <AgGridColumn headerName="Actions" minWidth={200} field="number" cellRendererFramework={Actions}></AgGridColumn>
+                </AgTable>
+            </Container>
     )
 }
 
-export default Dashboard
+export default Shipments
